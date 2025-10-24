@@ -1,0 +1,15 @@
+@use "../utils/mixins"as mix;
+
+header {
+  @include mix.flex-row(space-between, center, 1rem);
+  width: 100%;
+  border-bottom: 1px solid #DADDE1 ;
+}
+
+.start{
+  @include mix.flex-row(center, center, 0.5rem);
+}
+
+.end{
+  @include mix.flex-row(center, center, 0.5rem);
+}

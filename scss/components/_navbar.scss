@@ -1,0 +1,46 @@
+@use "../utils/mixins" as mix;
+
+.navbar{
+  @include mix.flex-row(space-between, center, 0rem);
+  
+
+  .circule {
+    @include mix.flex-row(center, center, 0.4rem);
+    list-style-type: none;
+    text-align: center;
+    
+
+    img {
+      width: 56px;
+      height: 56px;
+      border-radius: 100%;
+      border: 2px solid rgb(218, 221, 225);
+      padding: 2px;
+    }
+
+    p {
+      font-size: 0.8rem;
+    }
+  }
+}
+
+@media only screen and (min-width: 768px) {
+
+ .navbar{
+
+  .circule{
+    gap: 3rem;
+
+    img{
+    width: 77px;
+    height: 77px;
+   }
+
+  }
+
+  
+ }
+
+
+
+}
