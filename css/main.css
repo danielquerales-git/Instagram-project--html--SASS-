@@ -15,7 +15,7 @@ body {
 header {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: flex-start;
   align-items: center;
   gap: 1rem;
   width: 100%;
@@ -36,12 +36,52 @@ header {
   justify-content: center;
   align-items: center;
   gap: 0.5rem;
+  padding-left: 6.5rem;
+}
+
+@media only screen and (min-width: 768px) {
+  header {
+    display: none;
+  }
+}
+main {
+  display: flex;
+  flex-direction: column;
+  min-height: 90vh;
+  overflow: visible;
+}
+main .content {
+  flex: 1;
+}
+main .sidebar {
+  position: sticky;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: #fff;
+  border-top: 1px solid #dbdbdb;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 0.5rem 0;
+  z-index: 10;
+}
+main .sidebar .mobile {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  gap: 0rem;
+  width: 100%;
+}
+main .sidebar .md {
+  display: none;
 }
 
 .user {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: flex-start;
   align-items: center;
   gap: 0rem;
   padding: 1rem;
@@ -98,7 +138,7 @@ header {
 .follow {
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
+  justify-content: flex-start;
   align-items: center;
   gap: 0.2rem;
   padding: 0.5rem 1rem 1rem 1rem;
@@ -121,22 +161,77 @@ header {
   justify-content: space-around;
   align-items: center;
   gap: 3rem;
-  padding: 2rem 1rem 1rem 1rem;
-}
-
-.cards {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-}
-.cards img {
-  width: 100%;
-  aspect-ratio: 1/1.3; /* Cuadradas como en Instagram */
-  -o-object-fit: cover;
-     object-fit: cover; /* Recorta sin deformar */
-  cursor: pointer;
+  padding: 1rem 1rem 1rem 1rem;
 }
 
 @media only screen and (min-width: 768px) {
+  main {
+    flex-direction: row-reverse;
+  }
+  main .content {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 0rem;
+    flex: 1;
+    margin-left: 5rem;
+    margin-right: 5rem;
+    padding-bottom: 0;
+    width: 80%;
+    padding: 1.8rem 1.25rem 0rem 1.25rem;
+  }
+  main .content .header {
+    width: 100%;
+  }
+  main .content .posts {
+    max-width: 54rem;
+  }
+  main .sidebar {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 0rem;
+    top: 0;
+    bottom: auto;
+    width: 4rem;
+    height: 100vh;
+    border-top: none;
+    border-right: 1px solid #dbdbdb;
+  }
+  main .sidebar .md {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 4rem;
+    padding: 1rem;
+    height: 100%;
+  }
+  main .sidebar .md .aside {
+    display: none;
+  }
+  main .sidebar .md .second {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 1.5rem;
+    padding-bottom: 1rem;
+  }
+  main .sidebar .md .third {
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    align-items: center;
+    gap: 0.5rem;
+    padding-top: 1rem;
+    height: 100%;
+  }
+  main .sidebar .mobile {
+    display: none;
+  }
   .user {
     display: flex;
     flex-direction: row;
@@ -193,6 +288,41 @@ header {
     align-items: center;
     gap: 0rem;
     padding-top: 2rem;
+  }
+}
+@media only screen and (min-width: 1200px) {
+  main .sidebar {
+    width: 12rem;
+  }
+  main .sidebar .md {
+    width: 100%;
+  }
+  main .sidebar .md .first {
+    width: 100%;
+  }
+  main .sidebar .md .first .eld {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  main .sidebar .md .first .eld .aside {
+    display: block;
+  }
+  main .sidebar .md .second {
+    width: 100%;
+    align-items: flex-start;
+  }
+  main .sidebar .md .second .eld {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  main .sidebar .md .second .eld .aside {
+    display: block;
   }
 }
 .log-in {
@@ -304,5 +434,23 @@ header {
   .navbar .circule img {
     width: 77px;
     height: 77px;
+  }
+}
+.cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+.cards img {
+  width: 100%;
+  aspect-ratio: 1/1.3; /* Cuadradas como en Instagram */
+  -o-object-fit: cover;
+     object-fit: cover; /* Recorta sin deformar */
+  cursor: pointer;
+}
+
+@media only screen and (min-width: 768px) {
+  .cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
   }
 }/*# sourceMappingURL=main.css.map */

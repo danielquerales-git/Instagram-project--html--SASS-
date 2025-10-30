@@ -1,7 +1,7 @@
 @use "../utils/mixins"as mix;
 
 header {
-  @include mix.flex-row(space-between, center, 1rem);
+  @include mix.flex-row(flex-start, center, 1rem);
   width: 100%;
   border-bottom: 1px solid #DADDE1 ;
 }
@@ -12,4 +12,13 @@ header {
 
 .end{
   @include mix.flex-row(center, center, 0.5rem);
+  padding-left: 6.5rem;
+}
+
+
+@media only screen and (min-width: 768px) {
+
+  header {
+    display: none;
+  }
 }
