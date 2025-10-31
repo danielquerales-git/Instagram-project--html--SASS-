@@ -31,6 +31,10 @@ main {
   .md{
     display: none;
   }
+
+  #ig{
+    display: none
+  }
 }
 
 }
@@ -121,11 +125,9 @@ main {
     .content{
       @include mix.flex-column(flex-start, center, 0rem);
       flex: 1;
-      margin-left: 5rem; 
-      margin-right: 5rem;
       padding-bottom: 0;
-      width: 80%;
-      padding: 1.8rem 1.25rem 0rem 1.25rem;
+      width: calc(100% - 4rem);
+      padding: 1.8rem 1.25rem 0rem 0rem;
 
       .header{
         width: 100%;
@@ -170,6 +172,10 @@ main {
 
       .mobile{
         display: none;
+      }
+
+      #ig{
+        display: none
       }
   }
 
@@ -256,6 +262,14 @@ main {
               display: block;
             }
           }
+
+          #icono{
+            display: none;
+          }
+
+          #ig{
+            display: block;
+          }
         }
 
         .second{
@@ -270,13 +284,23 @@ main {
           }
         }
 
+        .third{
+          @include mix.flex-column(flex-end);
+          width: 100%;
+
+          .eld{
+            @include mix.flex-row(flex-start, center, 0.5rem);
+            .aside{
+              display: block;
+            }
+          }
+        }
       }
+
     }
 
   }
 
 }
-
-
 
 

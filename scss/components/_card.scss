@@ -2,13 +2,36 @@
 .cards {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
+  
 
   img {
-  width: 100%;
-  aspect-ratio: 1 / 1.3; /* Cuadradas como en Instagram */
-  object-fit: cover; /* Recorta sin deformar */
-  cursor: pointer;
-}
+    width: 100%;
+    aspect-ratio: 1 / 1.3; 
+    object-fit: cover; 
+    cursor: pointer;
+    display: block;
+    }
+    
+  .card{
+    height: 100%;
+    width: 100%;
+    position: relative;
+
+
+    .absolute {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    border-radius: 50%;
+    padding: 4px;
+
+    img {
+      width: 20px;
+      height: 20px;
+    }
+  }
+}  
+  
 
   
 }

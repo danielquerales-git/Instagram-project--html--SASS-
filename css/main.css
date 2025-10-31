@@ -77,6 +77,9 @@ main .sidebar .mobile {
 main .sidebar .md {
   display: none;
 }
+main .sidebar #ig {
+  display: none;
+}
 
 .user {
   display: flex;
@@ -175,11 +178,9 @@ main .sidebar .md {
     align-items: center;
     gap: 0rem;
     flex: 1;
-    margin-left: 5rem;
-    margin-right: 5rem;
     padding-bottom: 0;
-    width: 80%;
-    padding: 1.8rem 1.25rem 0rem 1.25rem;
+    width: calc(100% - 4rem);
+    padding: 1.8rem 1.25rem 0rem 0rem;
   }
   main .content .header {
     width: 100%;
@@ -230,6 +231,9 @@ main .sidebar .md {
     height: 100%;
   }
   main .sidebar .mobile {
+    display: none;
+  }
+  main .sidebar #ig {
     display: none;
   }
   .user {
@@ -310,6 +314,12 @@ main .sidebar .md {
   main .sidebar .md .first .eld .aside {
     display: block;
   }
+  main .sidebar .md .first #icono {
+    display: none;
+  }
+  main .sidebar .md .first #ig {
+    display: block;
+  }
   main .sidebar .md .second {
     width: 100%;
     align-items: flex-start;
@@ -322,6 +332,24 @@ main .sidebar .md {
     gap: 0.5rem;
   }
   main .sidebar .md .second .eld .aside {
+    display: block;
+  }
+  main .sidebar .md .third {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-start;
+    gap: 1rem;
+    width: 100%;
+  }
+  main .sidebar .md .third .eld {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  main .sidebar .md .third .eld .aside {
     display: block;
   }
 }
@@ -429,7 +457,7 @@ main .sidebar .md {
 
 @media only screen and (min-width: 768px) {
   .navbar .circule {
-    gap: 3rem;
+    gap: 1.5rem;
   }
   .navbar .circule img {
     width: 77px;
@@ -442,10 +470,27 @@ main .sidebar .md {
 }
 .cards img {
   width: 100%;
-  aspect-ratio: 1/1.3; /* Cuadradas como en Instagram */
+  aspect-ratio: 1/1.3;
   -o-object-fit: cover;
-     object-fit: cover; /* Recorta sin deformar */
+     object-fit: cover;
   cursor: pointer;
+  display: block;
+}
+.cards .card {
+  height: 100%;
+  width: 100%;
+  position: relative;
+}
+.cards .card .absolute {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  border-radius: 50%;
+  padding: 4px;
+}
+.cards .card .absolute img {
+  width: 20px;
+  height: 20px;
 }
 
 @media only screen and (min-width: 768px) {
